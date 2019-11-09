@@ -1,6 +1,7 @@
 require_relative 'card'
 
 @cards = []
+@bank
 
 #создаем колоду карт
 def create_deck_of_cards
