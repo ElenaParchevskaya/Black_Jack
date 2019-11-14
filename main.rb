@@ -1,7 +1,17 @@
 require_relative 'card'
+require_relative 'player'
+require_relative 'diller'
+
+RATE = -10
 
 @cards = []
-@bank
+@bank = 0
+
+print 'Как тебя зовут? '
+name = gets.chomp
+
+@player = Player.new(name)
+@diller = Diller.new
 
 #создаем колоду карт
 def create_deck_of_cards

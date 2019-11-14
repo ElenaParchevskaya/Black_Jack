@@ -1,17 +1,28 @@
 class Player
-  attr_accsessor :bank, :cards
 
-  def initialize
+  attr_accessor :bank, :cards
+
+  def initialize(name)
+    @name = name
     @cards = []
     @bank = 100
     @points = 0
   end
 
   def points_of_cards
-    @cards.each { |card| @point += card.value }
+    print "Cards of player #{self.name}: "
+    @cards.each do |card|
+      @point += card.value
+      print " #{card.name}"
+    end
+    puts
   end
 
   def add_card(card)
      @cards << card
+  end
+
+  def change_bank(value)
+    @bank += value
   end
 end
