@@ -1,4 +1,4 @@
-module CardOption
+module CardOptions
 
   def create_deck_of_cards
     suit = [9824, 9827, 9829, 9830]

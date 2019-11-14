@@ -1,4 +1,5 @@
 require_relative 'card'
+require_relative 'module_mehanics_game'
 require_relative 'player'
 require_relative 'diller'
 require_relative 'module_card_options'
@@ -20,3 +21,4 @@ create_deck_of_cards
 
 @bank -= 2 * RATE
 @player.change_bank(RATE)
+@dealer.change_bank(RATE)
