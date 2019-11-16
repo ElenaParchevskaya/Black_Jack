@@ -15,10 +15,17 @@ print 'Как тебя зовут? '
 name = gets.chomp
 
 @player = Player.new(name)
-@diller = Diller.new
+@dealer = Diller.new
 
 create_deck_of_cards
 
 @bank -= 2 * RATE
 @player.change_bank(RATE)
 @dealer.change_bank(RATE)
+
+@player.add_card select_card
+@player.add_card select_card
+@dealer.add_card select_card
+@dealer.add_card select_card
+
+@player.points_of_cards

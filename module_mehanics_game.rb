@@ -6,7 +6,7 @@ module MechanicsGame
       @point += card.value
       print " #{card.name} "
     end
-    puts
+    puts " #{self.points} очков"
   end
 
   def add_card(card)

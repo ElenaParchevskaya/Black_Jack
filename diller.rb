@@ -4,7 +4,8 @@ class Diller
 
   include MechanicsGame
 
-  attr_accsessor :bank, :cards
+  attr_accsessor :bank, :cards, :points
+  attr_reader :name
 
   def initialize
     @name = 'Diller'
