@@ -10,6 +10,7 @@ module MechanicsGame
   end
 
   def add_card(card)
+    card.busy = true
     @cards << card
   end
 
