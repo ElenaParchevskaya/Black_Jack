@@ -1,12 +1,12 @@
 module MechanicsGame
 
-  def points_of_cards
+  def points_of_cards(open)
     print "Карты игрока #{self.name}: "
     @cards.each do |card|
       @point += card.value
-      print " #{card.name} "
+      print " #{open ? card.name : '*'} "
     end
-    puts " #{self.points} очков"
+    puts " #{open ? self.points : '*'} очков"
   end
 
   def add_card(card)

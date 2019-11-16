@@ -7,6 +7,8 @@ require_relative 'module_card_options'
 include CardOptions
 
 RATE = -10
+OPEN = true
+HIDE = false
 
 @cards = []
 @bank = 0
@@ -28,4 +30,5 @@ create_deck_of_cards
 @dealer.add_card select_card
 @dealer.add_card select_card
 
-@player.points_of_cards
+@player.points_of_cards OPEN
+@dealer.points_of_cards HIDE
