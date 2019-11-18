@@ -50,3 +50,4 @@ loop do
  end
 
  puts 'ВиУ-ВиУ! Результаты!'
+ open_cards
