@@ -3,8 +3,9 @@ module MechanicsGame
   def points_of_cards(open)
     check_of_ace
     print "Карты игрока #{self.name}: "
-    @cards.each {|card| print " #{open ? card.name : '*'} "}
-    puts " #{open ? self.points : '*'} очков"
+    @cards.each {|card| print " #{open ? card.name : '*'} " }
+    print " Очков: #{open ? points : '*'}  "
+    puts " Банк = #{bank}"
   end
 
   def add_card(card)
@@ -19,11 +20,17 @@ module MechanicsGame
   end
 
   def check_of_ace
-    self.ace.times do
-      if self.points > 21
+    ace.times do
+      if points > 21
         self.points -= 10
         self.ace -= 1
       end
     end
+  end
+
+  def check
+    self.cards = []
+    self.points = 0
+    self.ace = 0
   end
 end

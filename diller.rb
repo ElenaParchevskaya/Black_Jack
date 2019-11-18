@@ -1,10 +1,8 @@
-require_relative 'module_mehanics_game'
+# frozen_string_literal: true
 
 class Diller
-
   include MechanicsGame
-
-  attr_accsessor :bank, :cards, :points, :ace
+  attr_accessor :bank, :cards, :points, :ace
   attr_reader :name
 
   def initialize

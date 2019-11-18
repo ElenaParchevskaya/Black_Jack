@@ -1,7 +1,6 @@
-require_relative 'module_mehanics_game'
+# frozen_string_literal: true
 
 class Player
-
   include MechanicsGame
 
   attr_accessor :bank, :cards, :points, :ace
