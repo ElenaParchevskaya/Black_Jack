@@ -23,31 +23,39 @@ name = gets.chomp
 
 create_deck_of_cards
 
-@bank -= 2 * RATE
-@player.change_bank(RATE)
-@dealer.change_bank(RATE)
-
-@player.add_card select_card
-@player.add_card select_card
-@dealer.add_card select_card
-@dealer.add_card select_card
-
-@player.points_of_cards OPEN
-@dealer.points_of_cards HIDE
-
 loop do
-  menu_for_player
-  case gets.chomp
-  when '1'
-    choise_of_dealer
-  when '2'
-    @player.add_card select_card
-    choise_of_dealer
-    break
-  when '3'
-    break
-  end
- end
+  @bank -= 2 * RATE
+  @player.change_bank(RATE)
+  @dealer.change_bank(RATE)
 
- puts 'ВиУ-ВиУ! Результаты!'
- open_cards
+  mixed_cards
+  processing("\nКарты тусуются")
+
+  @player.add_card select_card
+  @player.add_card select_card
+  @dealer.add_card select_card
+  @dealer.add_card select_card
+
+  @player.points_of_cards OPEN
+  @dealer.points_of_cards HIDE
+
+  loop do
+    menu_for_player
+    case gets.chomp
+    when '1'
+      choise_of_dealer
+    when '2'
+      @player.add_card select_card
+      choise_of_dealer
+      break
+    when '3'
+      break
+    end
+  end
+
+  processing("\nПодсчет результатов")
+  puts 'ВиУ-ВиУ! Результаты!'
+  open_cards
+  break unless @player.points.positive? && repeat_game?
+end
+puts 'Спасибо за игру!'

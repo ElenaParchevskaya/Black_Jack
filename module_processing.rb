@@ -4,6 +4,12 @@ module Processing
     puts '1 - Пропустить ход'
     puts '2 - Взять карту'
     puts '3 - Открыть карты'
+
+  def repeat_game?
+    puts "\nСыграем еще?"
+    puts '1 - Да'
+    puts '2 - Нет'
+    '1' == gets.chomp ? true : false
   end
 
   def choise_of_dealer
@@ -45,14 +51,14 @@ module Processing
 
   def game_lose
       puts "Оба игрока проиграли!"
-       puts "Банк #{@dealer.name} = #{@dealer.bank}"
+       puts "Банк #{@player.name} = #{@player.bank}"
        puts "Банк #{@dealer.name} = #{@dealer.bank}"
        @bank = 0
   end
 
   def game_tie
       puts "Ничья!"
-       puts "Банк #{@dealer.name} = #{@dealer.bank += @bank / 2}"
+       puts "Банк #{@player.name} = #{@player.bank += @bank / 2}"
        puts "Банк #{@dealer.name} = #{@dealer.bank += @bank / 2}"
        @bank = 0
   end
