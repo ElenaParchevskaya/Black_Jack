@@ -4,7 +4,7 @@ class Player
 
   include MechanicsGame
 
-  attr_accessor :bank, :cards, :points
+  attr_accessor :bank, :cards, :points, :ace
   attr_reader :name
 
   def initialize(name)
@@ -12,5 +12,6 @@ class Player
     @cards = []
     @bank = 100
     @points = 0
+    @ace = 0
   end
 end
